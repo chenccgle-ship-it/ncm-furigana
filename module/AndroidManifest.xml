@@ -1,0 +1,19 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="dev.local.ncmfurigana" android:versionCode="17" android:versionName="0.5.4-ui">
+    <uses-sdk android:minSdkVersion="29" android:targetSdkVersion="35" />
+    <queries><package android:name="com.netease.cloudmusic" /></queries>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <application android:label="网易云注音与音源" android:description="@string/module_description"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar" android:allowBackup="false"
+        android:supportsRtl="true" android:extractNativeLibs="true">
+        <service android:name=".ResolverService" android:exported="false" android:foregroundServiceType="dataSync" />
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
+        </activity>
+        <provider android:name=".ReportProvider" android:authorities="dev.local.ncmfurigana.report" android:exported="true" />
+    </application>
+</manifest>
+

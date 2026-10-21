@@ -1,0 +1,15 @@
+tools/
+.build-cache/
+build/
+outputs/
+runtime/node_modules/
+module/resources/lib/
+module/resources/com/
+module/resources/assets/resolver.zip
+*.p12
+*.jks
+*.keystore
+*.apk
+*.log
+.env
+__pycache__/
